@@ -4,12 +4,12 @@ import 'package:dio/dio.dart';
 
 class DioClient {
   final Dio _dio = Dio();
-  final _baseUrl = "http://api.sr.se/api/v2/scheduledepisodes";
+  final _baseUrl = "https://api.sr.se/api/v2/scheduledepisodes";
 
   Future<Map<String, dynamic>?> fetchChannelsFromPage(int page) async {
     try {
       Response response = await _dio
-          .get("http://api.sr.se/api/v2/channels?format=json&page=${page}");
+          .get("https://api.sr.se/api/v2/channels?format=json&page=${page}");
       Map<String, dynamic> data = response.data;
 
       final pagination = data["pagination"];
